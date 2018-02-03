@@ -50,7 +50,11 @@ int		check_links(char *str, t_all *all, char **s)
 		s[all->i] = ft_strdup(str);
 		all->i++;
 		if(str[0] == '#' && str[1] != '#')
+		{
+			free(str);
 			continue ;
+		}
+
 		else if(str[0] == '\n')
 		{
 			return 0;

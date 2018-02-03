@@ -21,6 +21,7 @@ void		enclosed_bulid_way(t_all *all, t_relations **z,
 		ft_copy(all, z, all->d);
 	}
 	all->r = malloc(sizeof(t_relations));
+	all->r->next = NULL;
 	all->r->rel = ft_strdup(truck);
 	z[all->a]->next = all->r;
 	serch_ways(all, truck, z);

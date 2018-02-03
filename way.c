@@ -20,6 +20,7 @@ int				encl_serch_ways2(t_all *all, t_relations **s, int x, t_truck *g)
 	if (x > 0)
 		ft_copy(all, s, all->d);
 	all->r = malloc(sizeof(t_relations));
+	all->r->next = NULL;
 	all->r->rel = ft_strdup(g->s);
 	p = s[all->a];
 	while (p->next)
@@ -39,6 +40,7 @@ int				e_serch_ways22(t_all *all, t_relations **s, int x, t_truck *g)
 	if (x > 0)
 		ft_copy(all, s, all->d);
 	all->r = malloc(sizeof(t_relations));
+	all->r->next = NULL;
 	all->r->rel = ft_strdup(g->f);
 	p = s[all->a];
 	while (p->next)

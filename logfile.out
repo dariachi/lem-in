@@ -1,510 +1,325 @@
-==28302== Memcheck, a memory error detector
-==28302== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==28302== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==28302== Command: ./cmake-build-debug/lem_in
-==28302== Parent PID: 3507
-==28302== 
-==28302== Conditional jump or move depends on uninitialised value(s)
-==28302==    at 0x4040F9: e_serch_ways22 (way.c:44)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302==  Uninitialised value was created by a heap allocation
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x4009D7: enclosed_bulid_way (building_way.c:23)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== Conditional jump or move depends on uninitialised value(s)
-==28302==    at 0x4040F9: e_serch_ways22 (way.c:44)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302==  Uninitialised value was created by a heap allocation
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x40409B: e_serch_ways22 (way.c:41)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== Conditional jump or move depends on uninitialised value(s)
-==28302==    at 0x4040F9: e_serch_ways22 (way.c:44)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302==  Uninitialised value was created by a heap allocation
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x40409B: e_serch_ways22 (way.c:41)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== Conditional jump or move depends on uninitialised value(s)
-==28302==    at 0x4037D8: three_next_f (next_main.c:41)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302==  Uninitialised value was created by a heap allocation
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x40409B: e_serch_ways22 (way.c:41)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== Conditional jump or move depends on uninitialised value(s)
-==28302==    at 0x401030: last_way (cheack_ways.c:51)
-==28302==    by 0x403814: three_next_f (next_main.c:45)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302==  Uninitialised value was created by a heap allocation
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x40409B: e_serch_ways22 (way.c:41)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== Conditional jump or move depends on uninitialised value(s)
-==28302==    at 0x402B68: inter (inter2.c:20)
-==28302==    by 0x400D70: optimal_ways (building_way.c:108)
-==28302==    by 0x403978: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302==  Uninitialised value was created by a heap allocation
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x40409B: e_serch_ways22 (way.c:41)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== Conditional jump or move depends on uninitialised value(s)
-==28302==    at 0x402D02: inter (inter2.c:48)
-==28302==    by 0x400D70: optimal_ways (building_way.c:108)
-==28302==    by 0x403978: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302==  Uninitialised value was created by a heap allocation
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x40409B: e_serch_ways22 (way.c:41)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== Conditional jump or move depends on uninitialised value(s)
-==28302==    at 0x402EA0: inter (inter2.c:72)
-==28302==    by 0x400D70: optimal_ways (building_way.c:108)
-==28302==    by 0x403978: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302==  Uninitialised value was created by a heap allocation
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x40409B: e_serch_ways22 (way.c:41)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== Conditional jump or move depends on uninitialised value(s)
-==28302==    at 0x402BC5: inter (inter2.c:38)
-==28302==    by 0x400D70: optimal_ways (building_way.c:108)
-==28302==    by 0x403978: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302==  Uninitialised value was created by a heap allocation
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x4038CB: next_next_main (next_main.c:56)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== Invalid read of size 8
-==28302==    at 0x402F90: inter (inter2.c:118)
-==28302==    by 0x400D70: optimal_ways (building_way.c:108)
-==28302==    by 0x403978: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302==  Address 0x5220470 is 16 bytes inside a block of size 24 free'd
-==28302==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x402F88: inter (inter2.c:117)
-==28302==    by 0x400D70: optimal_ways (building_way.c:108)
-==28302==    by 0x403978: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302==  Block was alloc'd at
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x402A13: inter (inter2.c:8)
-==28302==    by 0x400D70: optimal_ways (building_way.c:108)
-==28302==    by 0x403978: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== Conditional jump or move depends on uninitialised value(s)
-==28302==    at 0x401D84: flipping (flipping.c:27)
-==28302==    by 0x400E98: flip_and_len_ways (cheack_ways.c:12)
-==28302==    by 0x4039C3: next_next_main (next_main.c:64)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302==  Uninitialised value was created by a heap allocation
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x40409B: e_serch_ways22 (way.c:41)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== Conditional jump or move depends on uninitialised value(s)
-==28302==    at 0x400FD4: write_str (cheack_ways.c:35)
-==28302==    by 0x403A0E: next_next_main (next_main.c:71)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302==  Uninitialised value was created by a heap allocation
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x400841: main (main.c:37)
-==28302== 
-==28302== 
-==28302== HEAP SUMMARY:
-==28302==     in use at exit: 86,525 bytes in 220 blocks
-==28302==   total heap usage: 410 allocs, 190 frees, 88,787 bytes allocated
-==28302== 
-==28302== 1 bytes in 1 blocks are definitely lost in loss record 1 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404CF3: ft_strnew (ft_strnew.c:19)
-==28302==    by 0x402383: get_next_line (get_next_line.c:129)
-==28302==    by 0x4019FD: check_links (check_links.c:48)
-==28302==    by 0x40391A: next_next_main (next_main.c:58)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 3 bytes in 1 blocks are definitely lost in loss record 6 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404B68: ft_strjoin (ft_strjoin.c:30)
-==28302==    by 0x402033: kkk (get_next_line.c:43)
-==28302==    by 0x4021D8: w (get_next_line.c:80)
-==28302==    by 0x4022D9: sear (get_next_line.c:107)
-==28302==    by 0x4023A5: get_next_line (get_next_line.c:130)
-==28302==    by 0x4029B0: ft_serch_ants (help.c:94)
-==28302==    by 0x40079B: ft_next_main (main.c:16)
-==28302==    by 0x4008AA: main (main.c:43)
-==28302== 
-==28302== 3 bytes in 1 blocks are definitely lost in loss record 7 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404CF3: ft_strnew (ft_strnew.c:19)
-==28302==    by 0x4045CF: ft_itoa (ft_itoa.c:59)
-==28302==    by 0x402429: number_ants (help.c:28)
-==28302==    by 0x402960: ft_serch_ants (help.c:110)
-==28302==    by 0x40079B: ft_next_main (main.c:16)
-==28302==    by 0x4008AA: main (main.c:43)
-==28302== 
-==28302== 4 bytes in 1 blocks are definitely lost in loss record 14 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404A81: ft_strdup (ft_strdup.c:22)
-==28302==    by 0x4011CC: cheak_all_rooms (cheak_rooms.c:41)
-==28302==    by 0x4007CE: ft_next_main (main.c:19)
-==28302==    by 0x4008AA: main (main.c:43)
-==28302== 
-==28302== 4 bytes in 2 blocks are definitely lost in loss record 15 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404A81: ft_strdup (ft_strdup.c:22)
-==28302==    by 0x404030: encl_serch_ways2 (way.c:28)
-==28302==    by 0x4042E2: serch_ways (way.c:86)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 6 bytes in 1 blocks are definitely lost in loss record 19 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404B68: ft_strjoin (ft_strjoin.c:30)
-==28302==    by 0x402033: kkk (get_next_line.c:43)
-==28302==    by 0x4021D8: w (get_next_line.c:80)
-==28302==    by 0x4022D9: sear (get_next_line.c:107)
-==28302==    by 0x4023A5: get_next_line (get_next_line.c:130)
-==28302==    by 0x403B7A: start (start_end.c:24)
-==28302==    by 0x401114: ft_cycle (cheak_rooms.c:23)
-==28302==    by 0x401216: cheak_all_rooms (cheak_rooms.c:47)
-==28302==    by 0x4007CE: ft_next_main (main.c:19)
-==28302==    by 0x4008AA: main (main.c:43)
-==28302== 
-==28302== 6 bytes in 3 blocks are definitely lost in loss record 20 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404A81: ft_strdup (ft_strdup.c:22)
-==28302==    by 0x404119: e_serch_ways22 (way.c:47)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302== 
-==28302== 7 bytes in 1 blocks are definitely lost in loss record 22 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404B68: ft_strjoin (ft_strjoin.c:30)
-==28302==    by 0x402033: kkk (get_next_line.c:43)
-==28302==    by 0x4021D8: w (get_next_line.c:80)
-==28302==    by 0x4022D9: sear (get_next_line.c:107)
-==28302==    by 0x4023A5: get_next_line (get_next_line.c:130)
-==28302==    by 0x403A8B: end (start_end.c:6)
-==28302==    by 0x401170: ft_cycle (cheak_rooms.c:30)
-==28302==    by 0x401216: cheak_all_rooms (cheak_rooms.c:47)
-==28302==    by 0x4007CE: ft_next_main (main.c:19)
-==28302==    by 0x4008AA: main (main.c:43)
-==28302== 
-==28302== 8 bytes in 1 blocks are definitely lost in loss record 28 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x40265E: check_rooms (help.c:60)
-==28302==    by 0x403BE0: start (start_end.c:29)
-==28302==    by 0x401114: ft_cycle (cheak_rooms.c:23)
-==28302==    by 0x401216: cheak_all_rooms (cheak_rooms.c:47)
-==28302==    by 0x4007CE: ft_next_main (main.c:19)
-==28302==    by 0x4008AA: main (main.c:43)
-==28302== 
-==28302== 8 bytes in 1 blocks are definitely lost in loss record 29 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x40265E: check_rooms (help.c:60)
-==28302==    by 0x403AF1: end (start_end.c:10)
-==28302==    by 0x401170: ft_cycle (cheak_rooms.c:30)
-==28302==    by 0x401216: cheak_all_rooms (cheak_rooms.c:47)
-==28302==    by 0x4007CE: ft_next_main (main.c:19)
-==28302==    by 0x4008AA: main (main.c:43)
-==28302== 
-==28302== 8 bytes in 4 blocks are definitely lost in loss record 30 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404A81: ft_strdup (ft_strdup.c:22)
-==28302==    by 0x400B51: building_the_way (building_way.c:47)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 8 bytes in 4 blocks are definitely lost in loss record 31 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404A81: ft_strdup (ft_strdup.c:22)
-==28302==    by 0x404119: e_serch_ways22 (way.c:47)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 8 bytes in 4 blocks are definitely lost in loss record 32 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404A81: ft_strdup (ft_strdup.c:22)
-==28302==    by 0x404119: e_serch_ways22 (way.c:47)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302== 
-==28302== 12 bytes in 6 blocks are definitely lost in loss record 33 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404A81: ft_strdup (ft_strdup.c:22)
-==28302==    by 0x404119: e_serch_ways22 (way.c:47)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 40 (32 direct, 8 indirect) bytes in 1 blocks are definitely lost in loss record 37 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x401243: cheak_all_rooms (cheak_rooms.c:54)
-==28302==    by 0x4007CE: ft_next_main (main.c:19)
-==28302==    by 0x4008AA: main (main.c:43)
-==28302== 
-==28302== 48 bytes in 12 blocks are definitely lost in loss record 43 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404B68: ft_strjoin (ft_strjoin.c:30)
-==28302==    by 0x402033: kkk (get_next_line.c:43)
-==28302==    by 0x4021D8: w (get_next_line.c:80)
-==28302==    by 0x4022D9: sear (get_next_line.c:107)
-==28302==    by 0x4023A5: get_next_line (get_next_line.c:130)
-==28302==    by 0x4019FD: check_links (check_links.c:48)
-==28302==    by 0x40391A: next_next_main (next_main.c:58)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 52 (24 direct, 28 indirect) bytes in 1 blocks are definitely lost in loss record 44 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x401C24: ft_copy (copy.c:20)
-==28302==    by 0x403FA6: encl_serch_ways2 (way.c:21)
-==28302==    by 0x4042E2: serch_ways (way.c:86)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 64 bytes in 2 blocks are definitely lost in loss record 45 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404160: serch_ways2 (way.c:58)
-==28302==    by 0x40404B: encl_serch_ways2 (way.c:29)
-==28302==    by 0x4042E2: serch_ways (way.c:86)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 72 bytes in 9 blocks are definitely lost in loss record 48 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x40265E: check_rooms (help.c:60)
-==28302==    by 0x401271: cheak_all_rooms (cheak_rooms.c:56)
-==28302==    by 0x4007CE: ft_next_main (main.c:19)
-==28302==    by 0x4008AA: main (main.c:43)
-==28302== 
-==28302== 73 bytes in 12 blocks are definitely lost in loss record 49 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404B68: ft_strjoin (ft_strjoin.c:30)
-==28302==    by 0x402033: kkk (get_next_line.c:43)
-==28302==    by 0x4021D8: w (get_next_line.c:80)
-==28302==    by 0x4022D9: sear (get_next_line.c:107)
-==28302==    by 0x4023A5: get_next_line (get_next_line.c:130)
-==28302==    by 0x40134F: cheak_all_rooms (cheak_rooms.c:38)
-==28302==    by 0x4007CE: ft_next_main (main.c:19)
-==28302==    by 0x4008AA: main (main.c:43)
-==28302== 
-==28302== 78 (24 direct, 54 indirect) bytes in 1 blocks are definitely lost in loss record 50 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x401BAA: ft_copy (copy.c:10)
-==28302==    by 0x403FA6: encl_serch_ways2 (way.c:21)
-==28302==    by 0x4042E2: serch_ways (way.c:86)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 96 bytes in 3 blocks are definitely lost in loss record 54 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404160: serch_ways2 (way.c:58)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302== 
-==28302== 128 bytes in 4 blocks are definitely lost in loss record 55 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404160: serch_ways2 (way.c:58)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 128 bytes in 4 blocks are definitely lost in loss record 56 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404160: serch_ways2 (way.c:58)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40421D: serch_ways2 (way.c:67)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302== 
-==28302== 192 bytes in 6 blocks are definitely lost in loss record 57 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404275: serch_ways (way.c:79)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 192 bytes in 6 blocks are definitely lost in loss record 58 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x404160: serch_ways2 (way.c:58)
-==28302==    by 0x404134: e_serch_ways22 (way.c:48)
-==28302==    by 0x40432C: serch_ways (way.c:88)
-==28302==    by 0x400A37: enclosed_bulid_way (building_way.c:26)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 492 (32 direct, 460 indirect) bytes in 1 blocks are definitely lost in loss record 60 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x401385: ft_malloc_truck (check_links.c:5)
-==28302==    by 0x401741: check_links (check_links.c:47)
-==28302==    by 0x40391A: next_next_main (next_main.c:58)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 494 (96 direct, 398 indirect) bytes in 4 blocks are definitely lost in loss record 61 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x4009D7: enclosed_bulid_way (building_way.c:23)
-==28302==    by 0x400B7F: building_the_way (building_way.c:49)
-==28302==    by 0x4037B3: three_next_f (next_main.c:39)
-==28302==    by 0x403954: next_next_main (next_main.c:60)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 4,156 (4,000 direct, 156 indirect) bytes in 1 blocks are definitely lost in loss record 62 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x4038CB: next_next_main (next_main.c:56)
-==28302==    by 0x4008E2: main (main.c:48)
-==28302== 
-==28302== 80,129 (79,992 direct, 137 indirect) bytes in 1 blocks are definitely lost in loss record 63 of 63
-==28302==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==28302==    by 0x400841: main (main.c:37)
-==28302== 
-==28302== LEAK SUMMARY:
-==28302==    definitely lost: 85,279 bytes in 99 blocks
-==28302==    indirectly lost: 1,241 bytes in 120 blocks
-==28302==      possibly lost: 0 bytes in 0 blocks
-==28302==    still reachable: 5 bytes in 1 blocks
-==28302==         suppressed: 0 bytes in 0 blocks
-==28302== Reachable blocks (those to which a pointer was found) are not shown.
-==28302== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==28302== 
-==28302== For counts of detected and suppressed errors, rerun with: -v
-==28302== ERROR SUMMARY: 74 errors from 42 contexts (suppressed: 0 from 0)
+==30917== Memcheck, a memory error detector
+==30917== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==30917== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==30917== Command: ./cmake-build-debug/lem_in
+==30917== Parent PID: 3507
+==30917== 
+==30917== 
+==30917== HEAP SUMMARY:
+==30917==     in use at exit: 86,513 bytes in 220 blocks
+==30917==   total heap usage: 350 allocs, 130 frees, 88,613 bytes allocated
+==30917== 
+==30917== 1 bytes in 1 blocks are definitely lost in loss record 1 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404DBF: ft_strnew (ft_strnew.c:19)
+==30917==    by 0x4023BB: get_next_line (get_next_line.c:125)
+==30917==    by 0x401A74: check_links (check_links.c:48)
+==30917==    by 0x4039C6: next_next_main (next_main.c:63)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 3 bytes in 1 blocks are definitely lost in loss record 6 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404C34: ft_strjoin (ft_strjoin.c:30)
+==30917==    by 0x402096: kkk (get_next_line.c:42)
+==30917==    by 0x402227: w (get_next_line.c:78)
+==30917==    by 0x402311: sear (get_next_line.c:104)
+==30917==    by 0x4023DD: get_next_line (get_next_line.c:126)
+==30917==    by 0x4029F6: ft_serch_ants (help.c:99)
+==30917==    by 0x40079B: ft_next_main (main.c:16)
+==30917==    by 0x400902: main (main.c:49)
+==30917== 
+==30917== 3 bytes in 1 blocks are definitely lost in loss record 7 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404DBF: ft_strnew (ft_strnew.c:19)
+==30917==    by 0x40469B: ft_itoa (ft_itoa.c:59)
+==30917==    by 0x402461: number_ants (help.c:28)
+==30917==    by 0x4029A6: ft_serch_ants (help.c:115)
+==30917==    by 0x40079B: ft_next_main (main.c:16)
+==30917==    by 0x400902: main (main.c:49)
+==30917== 
+==30917== 4 bytes in 1 blocks are definitely lost in loss record 14 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404B4D: ft_strdup (ft_strdup.c:22)
+==30917==    by 0x401234: cheak_all_rooms (cheak_rooms.c:41)
+==30917==    by 0x4007CE: ft_next_main (main.c:19)
+==30917==    by 0x400902: main (main.c:49)
+==30917== 
+==30917== 4 bytes in 2 blocks are definitely lost in loss record 15 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404B4D: ft_strdup (ft_strdup.c:22)
+==30917==    by 0x4040EC: encl_serch_ways2 (way.c:29)
+==30917==    by 0x4043AE: serch_ways (way.c:88)
+==30917==    by 0x400A9F: enclosed_bulid_way (building_way.c:27)
+==30917==    by 0x400BE7: building_the_way (building_way.c:50)
+==30917==    by 0x403807: three_next_f (next_main.c:39)
+==30917==    by 0x403A00: next_next_main (next_main.c:65)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 6 bytes in 1 blocks are definitely lost in loss record 20 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404C34: ft_strjoin (ft_strjoin.c:30)
+==30917==    by 0x402096: kkk (get_next_line.c:42)
+==30917==    by 0x402227: w (get_next_line.c:78)
+==30917==    by 0x402311: sear (get_next_line.c:104)
+==30917==    by 0x4023DD: get_next_line (get_next_line.c:126)
+==30917==    by 0x403C26: start (start_end.c:24)
+==30917==    by 0x40117C: ft_cycle (cheak_rooms.c:23)
+==30917==    by 0x40127E: cheak_all_rooms (cheak_rooms.c:47)
+==30917==    by 0x4007CE: ft_next_main (main.c:19)
+==30917==    by 0x400902: main (main.c:49)
+==30917== 
+==30917== 6 bytes in 3 blocks are definitely lost in loss record 21 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404B4D: ft_strdup (ft_strdup.c:22)
+==30917==    by 0x4041E5: e_serch_ways22 (way.c:49)
+==30917==    by 0x4042E9: serch_ways2 (way.c:69)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4042E9: serch_ways2 (way.c:69)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4042E9: serch_ways2 (way.c:69)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4043F8: serch_ways (way.c:90)
+==30917==    by 0x400A9F: enclosed_bulid_way (building_way.c:27)
+==30917==    by 0x400BE7: building_the_way (building_way.c:50)
+==30917== 
+==30917== 7 bytes in 1 blocks are definitely lost in loss record 23 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x4026A4: check_rooms (help.c:60)
+==30917==    by 0x403C8C: start (start_end.c:29)
+==30917==    by 0x40117C: ft_cycle (cheak_rooms.c:23)
+==30917==    by 0x40127E: cheak_all_rooms (cheak_rooms.c:47)
+==30917==    by 0x4007CE: ft_next_main (main.c:19)
+==30917==    by 0x400902: main (main.c:49)
+==30917== 
+==30917== 7 bytes in 1 blocks are definitely lost in loss record 24 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404C34: ft_strjoin (ft_strjoin.c:30)
+==30917==    by 0x402096: kkk (get_next_line.c:42)
+==30917==    by 0x402227: w (get_next_line.c:78)
+==30917==    by 0x402311: sear (get_next_line.c:104)
+==30917==    by 0x4023DD: get_next_line (get_next_line.c:126)
+==30917==    by 0x403B37: end (start_end.c:6)
+==30917==    by 0x4011D8: ft_cycle (cheak_rooms.c:30)
+==30917==    by 0x40127E: cheak_all_rooms (cheak_rooms.c:47)
+==30917==    by 0x4007CE: ft_next_main (main.c:19)
+==30917==    by 0x400902: main (main.c:49)
+==30917== 
+==30917== 8 bytes in 1 blocks are definitely lost in loss record 29 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x4026A4: check_rooms (help.c:60)
+==30917==    by 0x403B9D: end (start_end.c:10)
+==30917==    by 0x4011D8: ft_cycle (cheak_rooms.c:30)
+==30917==    by 0x40127E: cheak_all_rooms (cheak_rooms.c:47)
+==30917==    by 0x4007CE: ft_next_main (main.c:19)
+==30917==    by 0x400902: main (main.c:49)
+==30917== 
+==30917== 8 bytes in 4 blocks are definitely lost in loss record 30 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404B4D: ft_strdup (ft_strdup.c:22)
+==30917==    by 0x400BB9: building_the_way (building_way.c:48)
+==30917==    by 0x403807: three_next_f (next_main.c:39)
+==30917==    by 0x403A00: next_next_main (next_main.c:65)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 8 bytes in 4 blocks are definitely lost in loss record 31 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404B4D: ft_strdup (ft_strdup.c:22)
+==30917==    by 0x4041E5: e_serch_ways22 (way.c:49)
+==30917==    by 0x4042E9: serch_ways2 (way.c:69)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4043F8: serch_ways (way.c:90)
+==30917==    by 0x400A9F: enclosed_bulid_way (building_way.c:27)
+==30917==    by 0x400BE7: building_the_way (building_way.c:50)
+==30917==    by 0x403807: three_next_f (next_main.c:39)
+==30917==    by 0x403A00: next_next_main (next_main.c:65)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 8 bytes in 4 blocks are definitely lost in loss record 32 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404B4D: ft_strdup (ft_strdup.c:22)
+==30917==    by 0x4041E5: e_serch_ways22 (way.c:49)
+==30917==    by 0x4042E9: serch_ways2 (way.c:69)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4042E9: serch_ways2 (way.c:69)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4043F8: serch_ways (way.c:90)
+==30917==    by 0x400A9F: enclosed_bulid_way (building_way.c:27)
+==30917==    by 0x400BE7: building_the_way (building_way.c:50)
+==30917==    by 0x403807: three_next_f (next_main.c:39)
+==30917==    by 0x403A00: next_next_main (next_main.c:65)
+==30917== 
+==30917== 12 bytes in 6 blocks are definitely lost in loss record 33 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404B4D: ft_strdup (ft_strdup.c:22)
+==30917==    by 0x4041E5: e_serch_ways22 (way.c:49)
+==30917==    by 0x4043F8: serch_ways (way.c:90)
+==30917==    by 0x400A9F: enclosed_bulid_way (building_way.c:27)
+==30917==    by 0x400BE7: building_the_way (building_way.c:50)
+==30917==    by 0x403807: three_next_f (next_main.c:39)
+==30917==    by 0x403A00: next_next_main (next_main.c:65)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 37 (32 direct, 5 indirect) bytes in 1 blocks are definitely lost in loss record 37 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x4012AB: cheak_all_rooms (cheak_rooms.c:54)
+==30917==    by 0x4007CE: ft_next_main (main.c:19)
+==30917==    by 0x400902: main (main.c:49)
+==30917== 
+==30917== 48 bytes in 12 blocks are definitely lost in loss record 43 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404C34: ft_strjoin (ft_strjoin.c:30)
+==30917==    by 0x402096: kkk (get_next_line.c:42)
+==30917==    by 0x402227: w (get_next_line.c:78)
+==30917==    by 0x402311: sear (get_next_line.c:104)
+==30917==    by 0x4023DD: get_next_line (get_next_line.c:126)
+==30917==    by 0x401A74: check_links (check_links.c:48)
+==30917==    by 0x4039C6: next_next_main (next_main.c:63)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 52 (24 direct, 28 indirect) bytes in 1 blocks are definitely lost in loss record 44 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x401C9B: ft_copy (copy.c:20)
+==30917==    by 0x404052: encl_serch_ways2 (way.c:21)
+==30917==    by 0x4043AE: serch_ways (way.c:88)
+==30917==    by 0x400A9F: enclosed_bulid_way (building_way.c:27)
+==30917==    by 0x400BE7: building_the_way (building_way.c:50)
+==30917==    by 0x403807: three_next_f (next_main.c:39)
+==30917==    by 0x403A00: next_next_main (next_main.c:65)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 64 bytes in 2 blocks are definitely lost in loss record 45 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x40422C: serch_ways2 (way.c:60)
+==30917==    by 0x404107: encl_serch_ways2 (way.c:30)
+==30917==    by 0x4043AE: serch_ways (way.c:88)
+==30917==    by 0x400A9F: enclosed_bulid_way (building_way.c:27)
+==30917==    by 0x400BE7: building_the_way (building_way.c:50)
+==30917==    by 0x403807: three_next_f (next_main.c:39)
+==30917==    by 0x403A00: next_next_main (next_main.c:65)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 64 bytes in 9 blocks are definitely lost in loss record 46 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x4026A4: check_rooms (help.c:60)
+==30917==    by 0x4012D9: cheak_all_rooms (cheak_rooms.c:56)
+==30917==    by 0x4007CE: ft_next_main (main.c:19)
+==30917==    by 0x400902: main (main.c:49)
+==30917== 
+==30917== 73 bytes in 12 blocks are definitely lost in loss record 49 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404C34: ft_strjoin (ft_strjoin.c:30)
+==30917==    by 0x402096: kkk (get_next_line.c:42)
+==30917==    by 0x402227: w (get_next_line.c:78)
+==30917==    by 0x402311: sear (get_next_line.c:104)
+==30917==    by 0x4023DD: get_next_line (get_next_line.c:126)
+==30917==    by 0x4013B7: cheak_all_rooms (cheak_rooms.c:38)
+==30917==    by 0x4007CE: ft_next_main (main.c:19)
+==30917==    by 0x400902: main (main.c:49)
+==30917== 
+==30917== 78 (24 direct, 54 indirect) bytes in 1 blocks are definitely lost in loss record 50 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x401C21: ft_copy (copy.c:10)
+==30917==    by 0x404052: encl_serch_ways2 (way.c:21)
+==30917==    by 0x4043AE: serch_ways (way.c:88)
+==30917==    by 0x400A9F: enclosed_bulid_way (building_way.c:27)
+==30917==    by 0x400BE7: building_the_way (building_way.c:50)
+==30917==    by 0x403807: three_next_f (next_main.c:39)
+==30917==    by 0x403A00: next_next_main (next_main.c:65)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 96 bytes in 3 blocks are definitely lost in loss record 54 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x40422C: serch_ways2 (way.c:60)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4042E9: serch_ways2 (way.c:69)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4042E9: serch_ways2 (way.c:69)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4042E9: serch_ways2 (way.c:69)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4043F8: serch_ways (way.c:90)
+==30917==    by 0x400A9F: enclosed_bulid_way (building_way.c:27)
+==30917==    by 0x400BE7: building_the_way (building_way.c:50)
+==30917== 
+==30917== 128 bytes in 4 blocks are definitely lost in loss record 55 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x40422C: serch_ways2 (way.c:60)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4042E9: serch_ways2 (way.c:69)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4043F8: serch_ways (way.c:90)
+==30917==    by 0x400A9F: enclosed_bulid_way (building_way.c:27)
+==30917==    by 0x400BE7: building_the_way (building_way.c:50)
+==30917==    by 0x403807: three_next_f (next_main.c:39)
+==30917==    by 0x403A00: next_next_main (next_main.c:65)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 128 bytes in 4 blocks are definitely lost in loss record 56 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x40422C: serch_ways2 (way.c:60)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4042E9: serch_ways2 (way.c:69)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4042E9: serch_ways2 (way.c:69)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4043F8: serch_ways (way.c:90)
+==30917==    by 0x400A9F: enclosed_bulid_way (building_way.c:27)
+==30917==    by 0x400BE7: building_the_way (building_way.c:50)
+==30917==    by 0x403807: three_next_f (next_main.c:39)
+==30917==    by 0x403A00: next_next_main (next_main.c:65)
+==30917== 
+==30917== 192 bytes in 6 blocks are definitely lost in loss record 57 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x404341: serch_ways (way.c:81)
+==30917==    by 0x400A9F: enclosed_bulid_way (building_way.c:27)
+==30917==    by 0x400BE7: building_the_way (building_way.c:50)
+==30917==    by 0x403807: three_next_f (next_main.c:39)
+==30917==    by 0x403A00: next_next_main (next_main.c:65)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 192 bytes in 6 blocks are definitely lost in loss record 58 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x40422C: serch_ways2 (way.c:60)
+==30917==    by 0x404200: e_serch_ways22 (way.c:50)
+==30917==    by 0x4043F8: serch_ways (way.c:90)
+==30917==    by 0x400A9F: enclosed_bulid_way (building_way.c:27)
+==30917==    by 0x400BE7: building_the_way (building_way.c:50)
+==30917==    by 0x403807: three_next_f (next_main.c:39)
+==30917==    by 0x403A00: next_next_main (next_main.c:65)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 492 (32 direct, 460 indirect) bytes in 1 blocks are definitely lost in loss record 60 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x4013ED: ft_malloc_truck (check_links.c:5)
+==30917==    by 0x4017A9: check_links (check_links.c:47)
+==30917==    by 0x4039C6: next_next_main (next_main.c:63)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 494 (96 direct, 398 indirect) bytes in 4 blocks are definitely lost in loss record 61 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x400A2F: enclosed_bulid_way (building_way.c:23)
+==30917==    by 0x400BE7: building_the_way (building_way.c:50)
+==30917==    by 0x403807: three_next_f (next_main.c:39)
+==30917==    by 0x403A00: next_next_main (next_main.c:65)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 4,156 (4,000 direct, 156 indirect) bytes in 1 blocks are definitely lost in loss record 62 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x403933: next_next_main (next_main.c:58)
+==30917==    by 0x40093A: main (main.c:54)
+==30917== 
+==30917== 80,129 (79,992 direct, 137 indirect) bytes in 1 blocks are definitely lost in loss record 63 of 63
+==30917==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30917==    by 0x400855: main (main.c:40)
+==30917== 
+==30917== LEAK SUMMARY:
+==30917==    definitely lost: 85,270 bytes in 99 blocks
+==30917==    indirectly lost: 1,238 bytes in 120 blocks
+==30917==      possibly lost: 0 bytes in 0 blocks
+==30917==    still reachable: 5 bytes in 1 blocks
+==30917==         suppressed: 0 bytes in 0 blocks
+==30917== Reachable blocks (those to which a pointer was found) are not shown.
+==30917== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==30917== 
+==30917== For counts of detected and suppressed errors, rerun with: -v
+==30917== ERROR SUMMARY: 30 errors from 30 contexts (suppressed: 0 from 0)

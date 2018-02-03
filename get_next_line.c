@@ -38,9 +38,8 @@ int		kkk(char *rob, char *n, char **line)
 	nv = ft_strnew(BUFF_SIZE + 1);
 	nv[BUFF_SIZE] = '\0';
 	nv = ft_strncat(nv, rob, i);
-	temp = ft_strdup(*line);
-	free(*line);
-	*line = ft_strjoin(temp, nv);
+	temp = *line;
+	*line = ft_strjoin(*line, nv);
 	free(temp);
 	while (n[j] != '\0')
 		j++;
@@ -70,9 +69,8 @@ int		w(int ret, char **line, int fd, char *rob)
 		nline = ft_strchr(rob, '\n');
 		if (nline == NULL)
 		{
-			temp = ft_strdup(*line);
-			free(*line);
-			*line = ft_strjoin(temp, rob);
+			temp = *line;
+			*line = ft_strjoin(*line, rob);
 			free(temp);
 			ft_memset(rob, '\0', BUFF_SIZE);
 		}
@@ -97,9 +95,8 @@ int		sear(char *rob, int fd, char **line)
 			return (kkk(rob, nline, line));
 		else
 		{
-			temp = ft_strdup(*line);
-			free(*line);
-			*line = ft_strjoin(temp, rob);
+			temp = *line;
+			*line = ft_strjoin(*line, rob);
 			free(temp);
 			ft_memset(rob, '\0', BUFF_SIZE);
 		}
@@ -109,7 +106,6 @@ int		sear(char *rob, int fd, char **line)
 		free(nline);
 		return (ret);
 	}
-	return (1);
 }
 
 int		get_next_line(const int fd, char **line)

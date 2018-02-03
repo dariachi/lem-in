@@ -32,10 +32,16 @@ int		main(void)
 	all.end = 0;
 
 	char *str;
+	int     maxLines;
+	int     i;
 	all.index = 0;
 
-	if((s = malloc(sizeof(char *) * 9999)) == NULL)
+	maxLines = 9999;
+	if((s = malloc(sizeof(char *) * maxLines)) == NULL)
 		return 0;
+	i = 0;
+	while (i < maxLines)
+		s[i++] = NULL;
 	all.room1 = malloc(sizeof(t_node));
 	all.room1->next = NULL;
 	all.room2 = all.room1;

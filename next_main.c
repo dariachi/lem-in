@@ -52,8 +52,13 @@ int				next_next_main(t_all *all, char **s, char *str)
 	t_relations	**z;
 	int			t;
 	int			mas[all->ants];
+	int         maxLines;
 
-	z = malloc(sizeof(t_relations *) * 500);
+	maxLines = 500;
+	z = malloc(sizeof(t_relations *) * maxLines);
+	t = 0;
+	while (t < maxLines)
+		z[t++] = NULL;
 	str = s[all->i];
 	if (check_links(str, all, s) == 0 || ft_position_def(all) == 0)
 		return (0);
