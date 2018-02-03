@@ -37,7 +37,6 @@ int		cheak_all_rooms(t_all *all, char *str, char **s)
 {
 	while(get_next_line(0, &str))
 	{
-
 		s[all->i] = ft_strdup(str);
 		if(str[0] == '#' && str[1] != '#')
 		{

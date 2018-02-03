@@ -65,8 +65,8 @@ int		main(void)
 		all.room2 = all.room2->next;
 		free(all.room3);
 	}
+	free(s);
 	free(all.room1);
-
 	free(all.en);
 	free(all.st);
 	return 0;

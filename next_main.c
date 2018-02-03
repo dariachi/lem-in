@@ -79,6 +79,7 @@ int				next_next_main(t_all *all, char **s, char *str)
 	while(*s)
 	{
 		x = *s;
+		//printf("%s\n", x);
 		free(x);
 		s++;
 	}
