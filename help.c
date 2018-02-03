@@ -120,6 +120,7 @@ int		ft_serch_ants(t_all *all, char *str, char **s)
 		}
 		if(all->ants != 0)
 		{
+			free(str);
 			break ;
 		}
 		all->i++;
