@@ -39,7 +39,7 @@ int		kkk(char *rob, char *n, char **line)
 	nv[BUFF_SIZE] = '\0';
 	nv = ft_strncat(nv, rob, i);
 	temp = *line;
-	*line = ft_strjoin(*line, nv);
+	*line = ft_strjoin(temp, nv);
 	free(temp);
 	while (n[j] != '\0')
 		j++;

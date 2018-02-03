@@ -74,17 +74,16 @@ int				next_next_main(t_all *all, char **s, char *str)
 		t++;
 	}
 	write_str(s);
-	//int z = 0;
 	t_truck *tr; 
 
 	while(all->truck1)
 	{
 		tr = all->truck1;
+		// printf("%s %s \n", tr->f, tr->s);
 		all->truck1 = all->truck1->next;
 		free(tr->s);
 		free(tr->f);
 		free(tr);
-//		all->truck1 = all->truck1->next;
 	}
 
 
@@ -97,9 +96,17 @@ int				next_next_main(t_all *all, char **s, char *str)
 	}
 	move_ants(all, z, d, mas);
 	u = 0;
+	t_relations *d1, *d2;
 	while(z[u])
 	{
-		free(z[u]);
+		d1 = z[u];
+		while(d1)
+		{
+			d2 = d1;
+			d1 = d1->next;
+			free(d2->rel);
+			free(d2);
+		}
 		u++;
 	}
 	free(z);

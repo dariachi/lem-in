@@ -46,9 +46,17 @@ int 	cheak_repeats(t_all *all, int u, int x, int y)
 	{
 		all->room2 = all->room2->next;
 		if(x == all->room2->x && y == all->room2->y)
+		{
+			free(all->room3->name);
+			free(all->room3);
 			return 0;
+		}
 		if(ft_strcmp(all->room2->name, s) == 0)
+		{
+			free(all->room3->name);
+			free(all->room3);
 			return 0;
+		}
 	}
 	return 1;
 }
@@ -59,7 +67,6 @@ int 	check_rooms(char *str, t_all *all)
 	int i = 0;
 	all->room3->name = malloc(ft_strlen(str) + 2);
 
-	// printf("len %zu\n", ft_strlen(str));
 
 	while(str[i] != ' ' && str[i] != '\n' && str[i] != '\0')
 	{
@@ -69,25 +76,36 @@ int 	check_rooms(char *str, t_all *all)
 	if(str[i] == '\0' || str[i] == '\n')
 	{
 		s[i] = '\0';
+		free(all->room3);
 		if(ft_strchr(s, '-') == NULL)
 			return 0;
 		return -1;
 	}
 	s[i] = '\0';
 
-	// printf("%s\n", s);
 
 	if(ft_strchr(s, '-') != NULL || s[0] == 'L')
+	{
+		free(all->room3);
 		return 0;
+	}
 	all->room3->name = ft_strcpy(all->room3->name, s);
 	int x = valid_num(&str[i]);
 	int q = ft_number(x);
 	if(str[i + q] != ' ')
+	{
+		free(all->room3->name);
+		free(all->room3);
 		return 0;
+	}
 	int y = valid_num(&str[i + q]);
 	q += ft_number(y);
 	if(ft_strcmp(&str[i + q], "") != 0)
+	{
+		free(all->room3->name);
+		free(all->room3);
 		return 0;
+	}
 	all->room3->x = x;
 	all->room3->y = y;
 	all->room3->count = -1;

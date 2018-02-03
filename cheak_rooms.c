@@ -38,14 +38,17 @@ int		cheak_all_rooms(t_all *all, char *str, char **s)
 	while(get_next_line(0, &str))
 	{
 		s[all->i] = ft_strdup(str);
+		// printf("s[all->i] %s 		%d\n", s[all->i], all->i);
 		if(str[0] == '#' && str[1] != '#')
 		{
 			all->i++;
+			free(str);
 			continue;
 		}
 		else if(ft_cycle(all, str, s) == 0)
 		{
-			printf("error\n");
+			// printf("error\n");
+			free(str);
 			return 0;
 		}
 		else if(str[0] != '#')
@@ -54,10 +57,12 @@ int		cheak_all_rooms(t_all *all, char *str, char **s)
 			all->room3->next = NULL;
 			int t = check_rooms(str, all);
 			if(t == -1)
+			{
 				break;
+			}
 			if(t == 0)
 			{
-				printf("error\n");
+				// printf("error\n");
 				free(all->room3);
 				return 0; 
 			}
@@ -65,6 +70,7 @@ int		cheak_all_rooms(t_all *all, char *str, char **s)
 		else if(str[0] == '#' && ft_strcmp("##start", str) != 0 && ft_strcmp("##end", str) != 0)
 		{
 			all->i++;
+			free(str);
 			continue ;
 		}
 		while(all->room2->next)
@@ -72,6 +78,9 @@ int		cheak_all_rooms(t_all *all, char *str, char **s)
 		all->room2->next = all->room3;
 		all->room2 = all->room2->next;
 		all->i++;
+		free(str);
 	}
+	// free(all->room3);
+	free(str);
 	return 1;
 }

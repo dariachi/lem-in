@@ -30,7 +30,7 @@ SRC = main.c \
 
 OBJ = $(SRC:.c=.o)
 
-CFLAGS = 
+CFLAGS = -g
 
 all: $(NAME)
 
@@ -39,7 +39,7 @@ $(NAME): $(OBJ)
 	gcc $(CFLAGS) $(OBJ) -Llibft -lft -o $(NAME)
 
 %.o: ./%.c
-	gcc -o $@ -c $<
+	gcc -g -o $@ -c $<
 
 clean:
 	make clean -C ./libft

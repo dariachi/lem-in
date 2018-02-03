@@ -3,6 +3,7 @@
 int 	end(t_all *all, char *str, char **s)
 {
 	all->end++;
+	//printf("STR                %s\n", str);
 	if(get_next_line(0, &str) == 0)
 		return 0;
 	all->i++;
@@ -14,6 +15,7 @@ int 	end(t_all *all, char *str, char **s)
 	}
 	all->en = ft_strdup(all->room3->name);
 	all->room3->count = 0;
+	free(str);
 	return 1;
 }
 
@@ -33,6 +35,7 @@ int 	start(t_all *all, char *str, char **s)
 	}
 	all->st = ft_strdup(all->room3->name);
 	all->room3->count = 0;
+	free(str);
 	return (1);
 }
 

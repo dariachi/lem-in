@@ -59,7 +59,6 @@ void			serch_ways2(t_all *all, char *way, t_relations **s)
 	int			x;
 	t_truck		*g;
 
-	g = malloc(sizeof(t_truck));
 	x = 0;
 	g = all->truck1;
 	all->d++;
@@ -72,7 +71,7 @@ void			serch_ways2(t_all *all, char *way, t_relations **s)
 		g = g->next;
 	}
 	all->d--;
-	free(g);
+	// free(g);
 }
 
 void			serch_ways(t_all *all, char *way, t_relations **s)
@@ -80,7 +79,6 @@ void			serch_ways(t_all *all, char *way, t_relations **s)
 	t_truck		*u;
 	int			x;
 
-	u = malloc(sizeof(t_truck));
 	u = all->truck1;
 	all->d = 2;
 	x = 0;
@@ -92,5 +90,5 @@ void			serch_ways(t_all *all, char *way, t_relations **s)
 			x = e_serch_ways22(all, s, x, u);
 		u = u->next;
 	}
-	free(u);
+	// free(u);
 }
