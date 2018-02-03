@@ -57,7 +57,9 @@ int 	check_rooms(char *str, t_all *all)
 {
 	char s[ft_strlen(str)];
 	int i = 0;
-	all->room3->name = malloc(sizeof(ft_strlen(str)));
+	all->room3->name = malloc(ft_strlen(str) + 2);
+
+	printf("len %zu\n", ft_strlen(str));
 
 	while(str[i] != ' ' && str[i] != '\n' && str[i] != '\0')
 	{
@@ -72,6 +74,9 @@ int 	check_rooms(char *str, t_all *all)
 		return -1;
 	}
 	s[i] = '\0';
+
+	printf("%s\n", s);
+
 	if(ft_strchr(s, '-') != NULL || s[0] == 'L')
 		return 0;
 	all->room3->name = ft_strcpy(all->room3->name, s);
