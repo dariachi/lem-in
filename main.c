@@ -63,6 +63,6 @@ int		main(void)
 
 	free(all.en);
 	free(all.st);
-	//while(1);
+	// while(1);
 	return 0;
 }

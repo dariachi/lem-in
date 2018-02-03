@@ -1,0 +1,11 @@
+3
+##start
+df 1 2
+fas 1 5
+ab 2 3
+##end
+[] 3 4
+# hjkfhdsl
+df-fas
+fas-ab
+ab-[]

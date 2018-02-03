@@ -80,17 +80,17 @@ int		start_end_way(t_all *all)
 	return (1);
 }
 
-ft_ddd()
-{
-	int ddd = 0;
-	while (all->t[ddd].i > -1)
-	{
-		d[ddd].i = all->t[ddd].i;
-		ddd++;
-	} 
-	d[ddd].i = -1;
-	f1 = o;
-}
+// ft_ddd()
+// {
+// 	int ddd = 0;
+// 	while (all->t[ddd].i > -1)
+// 	{
+// 		d[ddd].i = all->t[ddd].i;
+// 		ddd++;
+// 	} 
+// 	d[ddd].i = -1;
+// 	f1 = o;
+// }
 
 int		optimal_ways(t_all *all, t_tint *d, t_relations **z)
 {
