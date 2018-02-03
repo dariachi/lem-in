@@ -58,6 +58,7 @@ int		cheak_all_rooms(t_all *all, char *str, char **s)
 			if(t == 0)
 			{
 				printf("error\n");
+				free(all->room3);
 				return 0; 
 			}
 		}

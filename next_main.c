@@ -74,6 +74,19 @@ int				next_next_main(t_all *all, char **s, char *str)
 		t++;
 	}
 	write_str(s);
+	//int z = 0;
+	t_truck *tr; 
+
+	while(all->truck1)
+	{
+		tr = all->truck1;
+		free(all->truck1->s);
+		free(all->truck1->f);
+		free(tr);
+		all->truck1 = all->truck1->next;
+	}
+
+
 	int u = 0;
 	char *x;
 	while(s[u])

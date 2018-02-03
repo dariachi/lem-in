@@ -29,6 +29,7 @@ int				encl_serch_ways2(t_all *all, t_relations **s, int x, t_truck *g)
 	z = ft_strdup(g->s);
 	serch_ways2(all, z, s);
 	x++;
+	free(z);
 	return (x);
 }
 
@@ -49,6 +50,7 @@ int				e_serch_ways22(t_all *all, t_relations **s, int x, t_truck *g)
 	z = ft_strdup(g->f);
 	serch_ways2(all, z, s);
 	x++;
+	free(z);
 	return (x);
 }
 
