@@ -54,7 +54,6 @@ int		check_links(char *str, t_all *all, char **s)
 			free(str);
 			continue ;
 		}
-
 		else if(str[0] == '\n')
 		{
 			free(str);
@@ -65,22 +64,23 @@ int		check_links(char *str, t_all *all, char **s)
 			char ff[ft_strlen(str)];
 			char ss[ft_strlen(str)];
 			i = 0;
-			while(*str != '-')
+			while(str[i] != '-')
 			{
-				ff[i] = *str;
+				ff[i] = str[i];
 				i++;
-				str++;
-				if(*str == '\0')
+				
+				if(str[i] == '\0')
 					return 0;
 			}
 			ff[i] = '\0';
+			int h = i + 1;
 			i = 0;
-			str++;
-			while(*str != '\0')
+		
+			while(str[h] != '\0')
 			{
-				ss[i] = *str;
+				ss[i] = str[h];
 				i++;
-				str++;
+				h++;
 			}
 			ss[i] = '\0';
 
@@ -89,6 +89,7 @@ int		check_links(char *str, t_all *all, char **s)
 				all->truck2 = all->truck2->next;
 			all->truck2->next = all->truck3;
 		}
+		free(str);
 	}
 	free(str);
 	int f = 0;
