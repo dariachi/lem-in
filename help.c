@@ -27,7 +27,7 @@ int 	number_ants(t_all *all, char *str)
 	all->index = 1;
 	all->ants_str = ft_itoa(all->ants);
 	l = ft_strcmp(all->ants_str, str);
-	
+	free(all->ants_str);
 	if(l != 0 || all->ants == 0 || all->ants < 0 || all->ants > INT)
 	{
 		printf("error\n");

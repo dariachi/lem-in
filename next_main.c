@@ -74,6 +74,14 @@ int				next_next_main(t_all *all, char **s, char *str)
 		t++;
 	}
 	write_str(s);
+	int u = 0;
+	char *x;
+	while(*s)
+	{
+		x = *s;
+		free(x);
+		s++;
+	}
 	move_ants(all, z, d, mas);
 	return (1);
 }
