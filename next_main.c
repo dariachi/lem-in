@@ -76,13 +76,18 @@ int				next_next_main(t_all *all, char **s, char *str)
 	write_str(s);
 	int u = 0;
 	char *x;
-	while(*s)
+	while(s[u])
 	{
-		x = *s;
-		//printf("%s\n", x);
-		free(x);
-		s++;
+		free(s[u]);
+		u++;
 	}
 	move_ants(all, z, d, mas);
+	u = 0;
+	while(z[u])
+	{
+		free(z[u]);
+		u++;
+	}
+	free(z);
 	return (1);
 }
