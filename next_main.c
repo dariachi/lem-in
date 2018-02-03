@@ -80,10 +80,11 @@ int				next_next_main(t_all *all, char **s, char *str)
 	while(all->truck1)
 	{
 		tr = all->truck1;
-		free(all->truck1->s);
-		free(all->truck1->f);
-		free(tr);
 		all->truck1 = all->truck1->next;
+		free(tr->s);
+		free(tr->f);
+		free(tr);
+//		all->truck1 = all->truck1->next;
 	}
 
 

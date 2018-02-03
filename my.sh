@@ -44,7 +44,7 @@ echo "7_m.txt"
 ./cmake-build-debug/lem_in < maps/31_m.txt
 ./cmake-build-debug/lem_in < maps/32_m.txt
 ./cmake-build-debug/lem_in < maps/33_m.txt
-#./cmake-build-debug/lem_in < maps/34_m.txt
+./cmake-build-debug/lem_in < maps/34_m.txt
 
 ./cmake-build-debug/lem_in < maps/Lem_in_Kiev_subway.txt
 ./cmake-build-debug/lem_in < maps/algo.txt
