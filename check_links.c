@@ -57,6 +57,7 @@ int		check_links(char *str, t_all *all, char **s)
 
 		else if(str[0] == '\n')
 		{
+			free(str);
 			return 0;
 		}
 		else
@@ -89,6 +90,7 @@ int		check_links(char *str, t_all *all, char **s)
 			all->truck2->next = all->truck3;
 		}
 	}
+	free(str);
 	int f = 0;
 	all->truck2 = all->truck1;
 	while(all->truck2)
