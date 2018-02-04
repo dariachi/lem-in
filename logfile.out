@@ -1,53 +1,45 @@
-==29967== Memcheck, a memory error detector
-==29967== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==29967== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==29967== Command: ./cmake-build-debug/lem_in
-==29967== Parent PID: 14016
-==29967== 
-==29967== 
-==29967== HEAP SUMMARY:
-==29967==     in use at exit: 1,022 bytes in 70 blocks
-==29967==   total heap usage: 324 allocs, 254 frees, 87,809 bytes allocated
-==29967== 
-==29967== 8 bytes in 4 blocks are definitely lost in loss record 11 of 23
-==29967==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==29967==    by 0x404D9B: ft_strdup (ft_strdup.c:22)
-==29967==    by 0x400B67: building_the_way (building_way.c:48)
-==29967==    by 0x4038BB: three_next_f (next_main.c:39)
-==29967==    by 0x403AB4: next_next_main (next_main.c:65)
-==29967==    by 0x400937: main (main.c:56)
-==29967== 
-==29967== 52 (24 direct, 28 indirect) bytes in 1 blocks are definitely lost in loss record 15 of 23
-==29967==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==29967==    by 0x401CFE: ft_copy (copy.c:19)
-==29967==    by 0x4042BC: encl_serch_ways2 (way.c:21)
-==29967==    by 0x404608: serch_ways (way.c:88)
-==29967==    by 0x400A4D: enclosed_bulid_way (building_way.c:27)
-==29967==    by 0x400B95: building_the_way (building_way.c:50)
-==29967==    by 0x4038BB: three_next_f (next_main.c:39)
-==29967==    by 0x403AB4: next_next_main (next_main.c:65)
-==29967==    by 0x400937: main (main.c:56)
-==29967== 
-==29967== 463 (32 direct, 431 indirect) bytes in 1 blocks are definitely lost in loss record 22 of 23
-==29967==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==29967==    by 0x4008BE: main (main.c:47)
-==29967== 
-==29967== 494 (96 direct, 398 indirect) bytes in 4 blocks are definitely lost in loss record 23 of 23
-==29967==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==29967==    by 0x4009DD: enclosed_bulid_way (building_way.c:23)
-==29967==    by 0x400B95: building_the_way (building_way.c:50)
-==29967==    by 0x4038BB: three_next_f (next_main.c:39)
-==29967==    by 0x403AB4: next_next_main (next_main.c:65)
-==29967==    by 0x400937: main (main.c:56)
-==29967== 
-==29967== LEAK SUMMARY:
-==29967==    definitely lost: 160 bytes in 10 blocks
-==29967==    indirectly lost: 857 bytes in 59 blocks
-==29967==      possibly lost: 0 bytes in 0 blocks
-==29967==    still reachable: 5 bytes in 1 blocks
-==29967==         suppressed: 0 bytes in 0 blocks
-==29967== Reachable blocks (those to which a pointer was found) are not shown.
-==29967== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==29967== 
-==29967== For counts of detected and suppressed errors, rerun with: -v
-==29967== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
+==30880== Memcheck, a memory error detector
+==30880== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==30880== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==30880== Command: ./cmake-build-debug/lem_in
+==30880== Parent PID: 14016
+==30880== 
+==30880== 
+==30880== HEAP SUMMARY:
+==30880==     in use at exit: 754 bytes in 46 blocks
+==30880==   total heap usage: 296 allocs, 250 frees, 87,533 bytes allocated
+==30880== 
+==30880== 52 (24 direct, 28 indirect) bytes in 1 blocks are definitely lost in loss record 18 of 22
+==30880==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30880==    by 0x401D28: ft_copy (copy.c:19)
+==30880==    by 0x4042E6: encl_serch_ways2 (way.c:21)
+==30880==    by 0x404632: serch_ways (way.c:88)
+==30880==    by 0x400A4D: enclosed_bulid_way (building_way.c:27)
+==30880==    by 0x400BAB: building_the_way (building_way.c:57)
+==30880==    by 0x4038E5: three_next_f (next_main.c:39)
+==30880==    by 0x403ADE: next_next_main (next_main.c:65)
+==30880==    by 0x400937: main (main.c:56)
+==30880== 
+==30880== 234 (48 direct, 186 indirect) bytes in 2 blocks are definitely lost in loss record 20 of 22
+==30880==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30880==    by 0x4009DD: enclosed_bulid_way (building_way.c:23)
+==30880==    by 0x400BAB: building_the_way (building_way.c:57)
+==30880==    by 0x4038E5: three_next_f (next_main.c:39)
+==30880==    by 0x403ADE: next_next_main (next_main.c:65)
+==30880==    by 0x400937: main (main.c:56)
+==30880== 
+==30880== 463 (32 direct, 431 indirect) bytes in 1 blocks are definitely lost in loss record 22 of 22
+==30880==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30880==    by 0x4008BE: main (main.c:47)
+==30880== 
+==30880== LEAK SUMMARY:
+==30880==    definitely lost: 104 bytes in 4 blocks
+==30880==    indirectly lost: 645 bytes in 41 blocks
+==30880==      possibly lost: 0 bytes in 0 blocks
+==30880==    still reachable: 5 bytes in 1 blocks
+==30880==         suppressed: 0 bytes in 0 blocks
+==30880== Reachable blocks (those to which a pointer was found) are not shown.
+==30880== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==30880== 
+==30880== For counts of detected and suppressed errors, rerun with: -v
+==30880== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)

@@ -25,8 +25,6 @@ void		enclosed_bulid_way(t_all *all, t_relations **z,
 	all->r->rel = ft_strdup(truck);
 	z[all->a]->next = all->r;
 	serch_ways(all, truck, z);
-	current_name = truck;
-	truck = NULL;
 }
 
 void		building_the_way(t_all *all, t_relations **z)
@@ -43,11 +41,23 @@ void		building_the_way(t_all *all, t_relations **z)
 	while (all->truck2)
 	{
 		if (ft_strcmp(all->truck2->f, all->en) == 0)
+		{
+			if (truck)
+				free(truck);
 			truck = ft_strdup(all->truck2->s);
+		}
 		if (ft_strcmp(all->truck2->s, all->en) == 0)
+		{
+			if (truck)
+				free(truck);
 			truck = ft_strdup(all->truck2->f);
+		}
 		if (truck && truck[0] != '\0')
+		{
 			enclosed_bulid_way(all, z, truck, current_name);
+			free(truck);
+			truck = NULL;
+		}
 		all->truck2 = all->truck2->next;
 	}
 }
