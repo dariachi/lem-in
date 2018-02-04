@@ -23,7 +23,7 @@ void	ft_malloc_truck_2(t_all *all, char *ff, char *ss)
 
 int		check_links(char *str, t_all *all, char **s)
 {
-	s[all->i] = ft_strdup(str);
+//	s[all->i] = ft_strdup(str);
 	all->i++;
 	char fir[ft_strlen(str)];
 	char sec[ft_strlen(str)];
