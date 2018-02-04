@@ -18,6 +18,8 @@ int 	ft_next_main(t_all *all, char **s, char *str)
 	all->i++;
 	if(cheak_all_rooms(all, str, s) == 0)
 		return 0;
+
+	// printf("STR %s\n", all->room3->name);
 	if(all->start != 1 || all->end != 1)
 		return 0;
 	return 1;
@@ -57,18 +59,17 @@ int		main(void)
 		return 0;
 	}
 
-
-	all.room2 = all.room1->next;
-	while(all.room2)
-	{
-		all.room3 = all.room2;
-		all.room2 = all.room2->next;
-		free(all.room3);
-	}
+	// printf("ALL.A %d\n", all.a);
+	// all.room2 = all.room1->next;
+	// while(all.room2)
+	// {
+	// 	all.room3 = all.room2;
+	// 	all.room2 = all.room2->next;
+	// 	free(all.room3);
+	// }
 	free(s);
-	free(all.room1);
+	// free(all.room1);
 	free(all.en);
 	free(all.st);
-	// while(1);
 	return 0;
 }

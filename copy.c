@@ -9,7 +9,6 @@ void	ft_copy(t_all *all, t_relations **s, int i)
 	all->a++;
 	s[all->a] = malloc(sizeof(t_relations));
 	s[all->a]->next = NULL;
-
 	p = s[all->a];
 
 	p->rel = ft_strdup(p2->rel);
@@ -26,4 +25,10 @@ void	ft_copy(t_all *all, t_relations **s, int i)
 		p2 = p2->next;
 		i--;
 	}
+	// p = s[all->a];
+	// while(p)
+	// {
+	// 	printf("%s %d\n", p->rel, all->a);
+	// 	p = p->next;
+	// }
 }

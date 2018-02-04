@@ -43,7 +43,7 @@ void	write_str(char **s)
 
 void	last_way(t_all *all, t_relations **z)
 {
-	t_relations *k1;
+	t_relations *k1, *p1, *s;
 
 	for (int a = 0; a <= all->a; a++)
 	{
@@ -51,6 +51,40 @@ void	last_way(t_all *all, t_relations **z)
 		while(k1->next)
 			k1 = k1->next;
 		if(ft_strcmp(all->st, k1->rel) != 0)
+		{
+			p1 = z[a];
+			while(p1)
+			{
+				s = p1;
+				p1 = p1->next;
+				free(s->rel);
+				free(s);
+			}
 			z[a] = NULL;
+		}
 	}
+
+
+	// for (int a = 0; a <= all->a; a++)
+	// {
+	// 	if(z[a] != NULL)
+	// 	k1 = z[a];
+	// 	while(k1->next)
+	// 	{
+	// 		printf("k %s\n", k1->rel);
+	// 		k1 = k1->next;
+	// 	}
+	// 	// if(ft_strcmp(all->st, k1->rel) != 0)
+	// 	// {
+	// 	// 	p1 = z[a];
+	// 	// 	while(p1)
+	// 	// 	{
+	// 	// 		s = p1;
+	// 	// 		p1 = p1->next;
+	// 	// 		free(s->rel);
+	// 	// 		free(s);
+	// 	// 	}
+	// 	// 	z[a] = NULL;
+	// 	// }
+	// }
 }

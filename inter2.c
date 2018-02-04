@@ -97,26 +97,13 @@ void	inter(t_all *all, t_relations **s, int tumba)
 	d[ddd].i = -1;
 
 
-	// printf("dsfvuysvdfu\n");
-	// for(int z = 0; z < tumba; z++)
-	// {
-	// 	d1 = s[z];
-	// 	while(d1)
-	// 	{
-	// 		printf("%s ", d1->rel);
-	// 		d1 = d1->next;
-	// 	}
-	// 	printf("\n");
-	// }
-
 
 	d4 = d3;
 	while(d4)
 	{
-		d2 = d4->next;
-		free(d4->rel);
-		free(d4);
-		d4 = d2;
+		d2 = d4;
+		d4 = d4->next;
+		free(d2->rel);
+		free(d2);
 	}
-	//printf("\n\n\n");
 }

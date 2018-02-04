@@ -47,7 +47,6 @@ int		cheak_all_rooms(t_all *all, char *str, char **s)
 		}
 		else if(ft_cycle(all, str, s) == 0)
 		{
-			// printf("error\n");
 			free(str);
 			return 0;
 		}
@@ -73,6 +72,7 @@ int		cheak_all_rooms(t_all *all, char *str, char **s)
 			free(str);
 			continue ;
 		}
+		// printf("R3 %s\n", all->room3->name);
 		while(all->room2->next)
 			all->room2 = all->room2->next;
 		all->room2->next = all->room3;
@@ -80,7 +80,6 @@ int		cheak_all_rooms(t_all *all, char *str, char **s)
 		all->i++;
 		free(str);
 	}
-	// free(all->room3);
 	free(str);
 	return 1;
 }

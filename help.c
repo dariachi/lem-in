@@ -38,10 +38,7 @@ int 	number_ants(t_all *all, char *str)
 
 int 	cheak_repeats(t_all *all, int u, int x, int y)
 {
-	char s[u + 1];
-	ft_strcpy(s, all->room3->name);
 	all->room2 = all->room1;
-
 	while(all->room2->next)
 	{
 		all->room2 = all->room2->next;
@@ -51,7 +48,7 @@ int 	cheak_repeats(t_all *all, int u, int x, int y)
 			free(all->room3);
 			return 0;
 		}
-		if(ft_strcmp(all->room2->name, s) == 0)
+		if(ft_strcmp(all->room2->name, all->room3->name) == 0)
 		{
 			free(all->room3->name);
 			free(all->room3);
@@ -67,7 +64,6 @@ int 	check_rooms(char *str, t_all *all)
 	int i = 0;
 	all->room3->name = malloc(ft_strlen(str) + 2);
 
-
 	while(str[i] != ' ' && str[i] != '\n' && str[i] != '\0')
 	{
 		s[i] = str[i];
@@ -76,6 +72,7 @@ int 	check_rooms(char *str, t_all *all)
 	if(str[i] == '\0' || str[i] == '\n')
 	{
 		s[i] = '\0';
+		free(all->room3->name);
 		free(all->room3);
 		if(ft_strchr(s, '-') == NULL)
 			return 0;
@@ -86,10 +83,11 @@ int 	check_rooms(char *str, t_all *all)
 
 	if(ft_strchr(s, '-') != NULL || s[0] == 'L')
 	{
+		free(all->room3->name);
 		free(all->room3);
 		return 0;
 	}
-	all->room3->name = ft_strcpy(all->room3->name, s);
+	ft_strcpy(all->room3->name, s);
 	int x = valid_num(&str[i]);
 	int q = ft_number(x);
 	if(str[i + q] != ' ')
