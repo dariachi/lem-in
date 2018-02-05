@@ -55,6 +55,7 @@ void	last_way(t_all *all, t_relations **z)
 			p1 = z[a];
 			while(p1)
 			{
+				//printf("s->rel %s\n", p1->rel);
 				s = p1;
 				p1 = p1->next;
 				free(s->rel);

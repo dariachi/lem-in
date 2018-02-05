@@ -30,36 +30,49 @@ void		enclosed_bulid_way(t_all *all, t_relations **z,
 void		building_the_way(t_all *all, t_relations **z)
 {
 	char	*truck;
-	char	*current_name;
+	int current_name;
 
 	truck = NULL;
-	current_name = NULL;
+	current_name = 0;
 	all->r = malloc(sizeof(t_relations));
 	all->r->rel = ft_strdup(all->en);
 	z[all->a] = all->r;
+
 	all->truck2 = all->truck1;
-	while (all->truck2)
+	while(all->truck2)
 	{
-		if (ft_strcmp(all->truck2->f, all->en) == 0)
-		{
-			if (truck)
-				free(truck);
+		if(ft_strcmp(all->truck2->f, all->en) == 0)
 			truck = ft_strdup(all->truck2->s);
-		}
-		if (ft_strcmp(all->truck2->s, all->en) == 0)
-		{
-			if (truck)
-				free(truck);
+		if(ft_strcmp(all->truck2->s, all->en) == 0)
 			truck = ft_strdup(all->truck2->f);
-		}
-		if (truck && truck[0] != '\0')
+		if(truck && truck[0] != '\0')
 		{
-			enclosed_bulid_way(all, z, truck, current_name);
+			if(current_name > 0)
+			{
+				all->d = 1;
+				ft_copy(all, z, all->d);
+			}
+			all->r = malloc(sizeof(t_relations));
+			all->r->rel = ft_strdup(truck);
+			z[all->a]->next = all->r;
+			serch_ways(all, truck, z);
+			// printf("TRUCK %s\n", truck);
+			current_name = 1;
 			free(truck);
 			truck = NULL;
 		}
 		all->truck2 = all->truck2->next;
 	}
+	// t_relations *d;
+	// for(int a = 0; a <= all->a; a++)
+	// {
+	// 	d = z[a];
+	// 	while(d)
+	// 	{
+	// 		printf("%s\n", d->rel);
+	// 		d = d->next;
+	// 	}
+	// }
 }
 
 int		start_end_way(t_all *all)
@@ -91,17 +104,7 @@ int		start_end_way(t_all *all)
 	return (1);
 }
 
-// ft_ddd()
-// {
-// 	int ddd = 0;
-// 	while (all->t[ddd].i > -1)
-// 	{
-// 		d[ddd].i = all->t[ddd].i;
-// 		ddd++;
-// 	} 
-// 	d[ddd].i = -1;
-// 	f1 = o;
-// }
+
 
 int		optimal_ways(t_all *all, t_tint *d, t_relations **z)
 {

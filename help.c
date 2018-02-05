@@ -83,8 +83,8 @@ int 	check_rooms(char *str, t_all *all)
 
 	if(ft_strchr(s, '-') != NULL || s[0] == 'L')
 	{
-		free(all->room3->name);
-		free(all->room3);
+		// free(all->room3->name);
+		// free(all->room3);
 		return 0;
 	}
 	ft_strcpy(all->room3->name, s);
@@ -92,8 +92,8 @@ int 	check_rooms(char *str, t_all *all)
 	int q = ft_number(x);
 	if(str[i + q] != ' ')
 	{
-		free(all->room3->name);
-		free(all->room3);
+		// free(all->room3->name);
+		// free(all->room3);
 		return 0;
 	}
 	int y = valid_num(&str[i + q]);

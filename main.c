@@ -16,8 +16,12 @@ int 	ft_next_main(t_all *all, char **s, char *str)
 	if(ft_serch_ants(all, str, s) == 0)
 		return 0;
 	all->i++;
+	// write(1, "X\n", 2);
+
 	if(cheak_all_rooms(all, str, s) == 0)
 		return 0;
+
+		// write(1, "Z\n", 2);
 
 	// printf("STR %s\n", all->room3->name);
 	if(all->start != 1 || all->end != 1)
@@ -47,17 +51,18 @@ int		main(void)
 	all.room1 = malloc(sizeof(t_node));
 	all.room1->next = NULL;
 	all.room2 = all.room1;
-
 	if(ft_next_main(&all, s, str) == 0)
 	{
 		printf("ERROR\n");
 		return 0;
 	}
+	// write(1, "Z\n", 2);
 	if(next_next_main(&all, s, str) == 0)
 	{
 		printf("ERROR\n");
 		return 0;
 	}
+
 
 	// printf("ALL.A %d\n", all.a);
 	// all.room2 = all.room1->next;
@@ -71,5 +76,6 @@ int		main(void)
 	// free(all.room1);
 	free(all.en);
 	free(all.st);
+	// while(1);
 	return 0;
 }

@@ -108,6 +108,7 @@ int				next_next_main(t_all *all, char **s, char *str)
 		}
 		while(d1)
 		{
+			// printf("d1 %s\n", d1->rel);
 			d2 = d1;
 			d1 = d1->next;
 			free(d2->rel);
