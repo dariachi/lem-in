@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   g_help.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dchirkin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/02 13:43:05 by dchirkin          #+#    #+#             */
-/*   Updated: 2017/02/24 11:57:51 by dchirkin         ###   ########.fr       */
+/*   Created: 2018/02/08 19:09:07 by dchirkin          #+#    #+#             */
+/*   Updated: 2018/02/08 19:09:09 by dchirkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "lemin.h"
 
-# include <fcntl.h>
-# include <unistd.h>
-# include "libft/libft.h"
+void	ft_free_gnl(char **line, char *rob)
+{
+	char *temp;
 
-# define BUFF_SIZE 4
-
-int		get_next_line(const int fd, char **line);
-int		poss(char *str, char c, int g);
-int		sear(char *rob, int fd, char **line);
-int		w(int ret, char **line, int fd, char *rob);
-int		kkk(char *rob, char *n, char **line);
-void	ft_free_gnl(char **line, char *rob);
-
-#endif
+	temp = *line;
+	*line = ft_strjoin(*line, rob);
+	free(temp);
+	ft_memset(rob, '\0', BUFF_SIZE);
+}

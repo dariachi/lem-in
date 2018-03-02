@@ -12,74 +12,89 @@
 
 #include "lemin.h"
 
-int		ft_cycle(t_all *all, char *str,  char **s)
+int		ft_cycle(t_all *all, char *str, char **s)
 {
-		if(str[0] == ' ' || str[0] == '\n' || str[0] == '\0')
-			return 0;
-		else if(ft_strcmp("##start", str) == 0)
+	if (str[0] == ' ' || str[0] == '\n' || str[0] == '\0')
+	{
+		free(str);
+		return (0);
+	}
+	else if (ft_strcmp("##start", str) == 0)
+	{
+		malloc_room3(all);
+		if (start(all, str, s) == 0)
 		{
-			all->room3 = malloc(sizeof(t_node));
-			all->room3->next = NULL;
-			if(start(all, str, s) == 0)
-				return 0;
+			free(str);
+			return (0);
 		}
-		else if(ft_strcmp("##end", str) == 0 )
+	}
+	else if (ft_strcmp("##end", str) == 0)
+	{
+		malloc_room3(all);
+		if (end(all, str, s) == 0)
 		{
-			all->room3 = malloc(sizeof(t_node));
-			all->room3->next = NULL;
-			if(end(all, str, s) == 0 || all->start == 0)
-				return 0;
+			free(str);
+			return (0);
 		}
-		return 1;
+	}
+	return (1);
+}
+
+void	stuct_room(char *str, t_all *all)
+{
+	while (all->room2->next)
+		all->room2 = all->room2->next;
+	all->room2->next = all->room3;
+	all->room2 = all->room2->next;
+	all->i++;
+	free(str);
+}
+
+int		cheak_comments(t_all *all, char *str)
+{
+	if (str[0] == '#' && ft_strcmp("##start", str) != 0 &&
+			ft_strcmp("##end", str) != 0)
+	{
+		all->i++;
+		free(str);
+		return (1);
+	}
+	return (2);
+}
+
+int		cheak_comment(t_all *all, char *str)
+{
+	if (str[0] == '#' && str[1] != '#')
+	{
+		all->i++;
+		free(str);
+		return (1);
+	}
+	return (2);
 }
 
 int		cheak_all_rooms(t_all *all, char *str, char **s)
 {
-	while(get_next_line(0, &str))
+	while (get_next_line(0, &str))
 	{
 		s[all->i] = ft_strdup(str);
-		// printf("s[all->i] %s 		%d\n", s[all->i], all->i);
-		if(str[0] == '#' && str[1] != '#')
-		{
-			all->i++;
-			free(str);
+		if (cheak_comment(all, str) == 1)
 			continue;
-		}
-		else if(ft_cycle(all, str, s) == 0)
+		else if (ft_cycle(all, str, s) == 0)
+			return (0);
+		else if (str[0] != '#')
 		{
-			free(str);
-			return 0;
+			malloc_room3(all);
+			all->tt = check_rooms(str, all);
+			if (all->tt == -1)
+				break ;
+			if (all->tt == 0)
+				return (0);
 		}
-		else if(str[0] != '#')
-		{
-			all->room3 = malloc(sizeof(t_node));
-			all->room3->next = NULL;
-			int t = check_rooms(str, all);
-			if(t == -1)
-			{
-				break;
-			}
-			if(t == 0)
-			{
-				// printf("error\n");
-				// free(all->room3);
-				return 0; 
-			}
-		}
-		else if(str[0] == '#' && ft_strcmp("##start", str) != 0 && ft_strcmp("##end", str) != 0)
-		{
-			all->i++;
-			free(str);
-			continue ;
-		}
-		// printf("R3 %s\n", all->room3->name);
-		while(all->room2->next)
-			all->room2 = all->room2->next;
-		all->room2->next = all->room3;
-		all->room2 = all->room2->next;
-		all->i++;
-		free(str);
+		else if (cheak_comments(all, str) == 1)
+			continue;
+		stuct_room(str, all);
 	}
 	free(str);
-	return 1;
+	return (1);
 }

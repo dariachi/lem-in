@@ -64,14 +64,16 @@ void			serch_ways2(t_all *all, char *way, t_relations **s)
 	all->d++;
 	while (g)
 	{
-		if (ft_strcmp(way, g->f) == 0 && g->c_s == g->c_f - 1)
+		if (ft_strcmp(way, g->f) == 0 && g->c_s == g->c_f - 1 &&
+				ft_strcmp(g->s, all->en) != 0)
 			x = encl_serch_ways2(all, s, x, g);
-		if (ft_strcmp(way, g->s) == 0 && g->c_s - 1 == g->c_f)
+		if (ft_strcmp(way, g->s) == 0 && g->c_s - 1 == g->c_f &&
+				ft_strcmp(g->s, all->en) != 0)
 			x = e_serch_ways22(all, s, x, g);
 		g = g->next;
+		x = 0;
 	}
 	all->d--;
-	// free(g);
 }
 
 void			serch_ways(t_all *all, char *way, t_relations **s)
@@ -84,11 +86,12 @@ void			serch_ways(t_all *all, char *way, t_relations **s)
 	x = 0;
 	while (u)
 	{
-		if (ft_strcmp(way, u->f) == 0 && u->c_s == u->c_f - 1)
+		if (ft_strcmp(way, u->f) == 0 && u->c_s == u->c_f - 1 &&
+			ft_strcmp(u->s, all->en) != 0)
 			x = encl_serch_ways2(all, s, x, u);
-		if (ft_strcmp(way, u->s) == 0 && u->c_s - 1 == u->c_f)
+		if (ft_strcmp(way, u->s) == 0 && u->c_s - 1 == u->c_f &&
+			ft_strcmp(u->f, all->en) != 0)
 			x = e_serch_ways22(all, s, x, u);
 		u = u->next;
 	}
-	// free(u);
 }

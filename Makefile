@@ -26,20 +26,24 @@ SRC = main.c \
 		cheak_rooms.c \
 		next_main.c \
 		building_way.c \
-		cheack_ways.c
+		cheack_ways.c \
+		next_main2.c \
+		move_ants2.c \
+		help1.c \
+		check_links2.c \
+		building_way2.c \
+		start_end2.c \
+		g_help.c
 
 OBJ = $(SRC:.c=.o)
 
-CFLAGS = -g
+CC = gcc -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	make -C ./libft/
-	gcc $(CFLAGS) $(OBJ) -Llibft -lft -o $(NAME)
-
-%.o: ./%.c
-	gcc -g -o $@ -c $<
+	$(CC) libft/libft.a $^ -o $@
 
 clean:
 	make clean -C ./libft

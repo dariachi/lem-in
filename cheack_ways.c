@@ -1,38 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cheack_ways.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dchirkin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/02/08 13:24:15 by dchirkin          #+#    #+#             */
+/*   Updated: 2018/02/08 13:24:17 by dchirkin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lemin.h"
 
-int 	flip_and_len_ways(t_all *all, t_tint *d, t_relations **z)
+int				flip_and_len_ways(t_all *all, t_tint *d, t_relations **z,
+									int len)
 {
-	t_relations *d1;
-	int t = 0;
-	int j = 0; 
-	int len = 0;
+	t_relations	*d1;
+	int			t;
 
-	while(d[t].i != -1)
+	t = 0;
+	all->jj = 0;
+	while (d[t].i != -1)
 	{
-		if(flipping(all, z, d[t].i) == 0)
-			return 0;
+		if (flipping(z, d[t].i) == 0)
+			return (0);
 		t++;
 	}
-	while(d[j].i != -1)
+	while (d[all->jj].i != -1)
 	{
-		d1 = z[d[j].i];
+		d1 = z[d[all->jj].i];
 		len = 0;
-		while(d1)
+		while (d1)
 		{
 			len++;
 			d1 = d1->next;
 		}
-		d[j].len = len - 1;
-		j++;
+		d[all->jj].len = len - 1;
+		all->jj++;
 	}
-	d[j].len = 1000;
-	return 1;
+	d[all->jj].len = 1000;
+	return (1);
 }
 
-void	write_str(char **s)
+void			write_str(char **s)
 {
-	int c = 0;
-	while(s[c] != NULL)
+	int c;
+
+	c = 0;
+	while (s[c] != NULL)
 	{
 		ft_putstr(s[c]);
 		ft_putchar('\n');
@@ -41,21 +56,24 @@ void	write_str(char **s)
 	ft_putchar('\n');
 }
 
-void	last_way(t_all *all, t_relations **z)
+void			last_way(t_all *all, t_relations **z)
 {
-	t_relations *k1, *p1, *s;
+	t_relations *k1;
+	t_relations *p1;
+	t_relations *s;
+	int			a;
 
-	for (int a = 0; a <= all->a; a++)
+	a = 0;
+	while (a <= all->a)
 	{
 		k1 = z[a];
-		while(k1->next)
+		while (k1->next)
 			k1 = k1->next;
-		if(ft_strcmp(all->st, k1->rel) != 0)
+		if (ft_strcmp(all->st, k1->rel) != 0)
 		{
 			p1 = z[a];
-			while(p1)
+			while (p1)
 			{
-				//printf("s->rel %s\n", p1->rel);
 				s = p1;
 				p1 = p1->next;
 				free(s->rel);
@@ -63,29 +81,6 @@ void	last_way(t_all *all, t_relations **z)
 			}
 			z[a] = NULL;
 		}
+		a++;
 	}
-
-
-	// for (int a = 0; a <= all->a; a++)
-	// {
-	// 	if(z[a] != NULL)
-	// 	k1 = z[a];
-	// 	while(k1->next)
-	// 	{
-	// 		printf("k %s\n", k1->rel);
-	// 		k1 = k1->next;
-	// 	}
-	// 	// if(ft_strcmp(all->st, k1->rel) != 0)
-	// 	// {
-	// 	// 	p1 = z[a];
-	// 	// 	while(p1)
-	// 	// 	{
-	// 	// 		s = p1;
-	// 	// 		p1 = p1->next;
-	// 	// 		free(s->rel);
-	// 	// 		free(s);
-	// 	// 	}
-	// 	// 	z[a] = NULL;
-	// 	// }
-	// }
 }

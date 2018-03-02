@@ -77,14 +77,13 @@ SRC =	ft_putchar.c	\
 
 OBJ = $(SRC:.c=.o)
 
-FLAGS =
+CC = gcc -Wall -Wextra -Werror
 
 HEADERS = libft.h
 
 all:	$(NAME)
 
 $(NAME): $(OBJ)
-	gcc $(FLAGS) -c $(SRC) -I $(HEADERS)
 	ar -rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 

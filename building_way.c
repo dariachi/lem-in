@@ -12,74 +12,38 @@
 
 #include "lemin.h"
 
-void		enclosed_bulid_way(t_all *all, t_relations **z,
-					char *truck, char *current_name)
+int				building_the_way(t_all *all, t_relations **z, char **s)
 {
-	if (current_name != NULL)
-	{
-		all->d = 1;
-		ft_copy(all, z, all->d);
-	}
-	all->r = malloc(sizeof(t_relations));
-	all->r->next = NULL;
-	all->r->rel = ft_strdup(truck);
-	z[all->a]->next = all->r;
-	serch_ways(all, truck, z);
-}
-
-void		building_the_way(t_all *all, t_relations **z)
-{
-	char	*truck;
-	int current_name;
+	char		*truck;
 
 	truck = NULL;
-	current_name = 0;
+	all->current_name = 0;
 	all->r = malloc(sizeof(t_relations));
 	all->r->rel = ft_strdup(all->en);
 	z[all->a] = all->r;
-
 	all->truck2 = all->truck1;
-	while(all->truck2)
+	while (all->truck2)
 	{
-		if(ft_strcmp(all->truck2->f, all->en) == 0)
+		if (ft_strcmp(all->truck2->f, all->en) == 0)
 			truck = ft_strdup(all->truck2->s);
-		if(ft_strcmp(all->truck2->s, all->en) == 0)
+		if (ft_strcmp(all->truck2->s, all->en) == 0)
 			truck = ft_strdup(all->truck2->f);
-		if(truck && truck[0] != '\0')
+		if (truck && truck[0] != '\0')
 		{
-			if(current_name > 0)
-			{
-				all->d = 1;
-				ft_copy(all, z, all->d);
-			}
-			all->r = malloc(sizeof(t_relations));
-			all->r->rel = ft_strdup(truck);
-			z[all->a]->next = all->r;
-			serch_ways(all, truck, z);
-			// printf("TRUCK %s\n", truck);
-			current_name = 1;
+			if (ft_build(all, truck, z, s) == 2)
+				return (2);
+			all->current_name = 1;
 			free(truck);
 			truck = NULL;
 		}
 		all->truck2 = all->truck2->next;
 	}
-	// t_relations *d;
-	// for(int a = 0; a <= all->a; a++)
-	// {
-	// 	d = z[a];
-	// 	while(d)
-	// 	{
-	// 		printf("%s\n", d->rel);
-	// 		d = d->next;
-	// 	}
-	// }
+	return (1);
 }
 
-int		start_end_way(t_all *all)
+int				start_end_way(t_all *all, char **s)
 {
-	int	zz;
-
-	zz = 0;
+	all->tt = 0;
 	all->truck2 = all->truck1;
 	while (all->truck2)
 	{
@@ -88,15 +52,16 @@ int		start_end_way(t_all *all)
 			(ft_strcmp(all->truck2->s, all->st) == 0 ||
 				ft_strcmp(all->truck2->s, all->en) == 0))
 		{
-			while (all->ants != zz)
-			{
-				ft_putchar('L');
-				ft_putnbr(zz + 1);
-				ft_putchar('-');
-				ft_putstr(all->en);
-				zz++;
-			}
+			write_str(s);
+			while (all->ants != all->tt)
+				all->tt = ft_write_an(all->tt, all->en);
 			ft_putchar('\n');
+			all->jj = 0;
+			while (s[all->jj])
+			{
+				free(s[all->jj]);
+				all->jj++;
+			}
 			return (0);
 		}
 		all->truck2 = all->truck2->next;
@@ -104,38 +69,64 @@ int		start_end_way(t_all *all)
 	return (1);
 }
 
-
-
-int		optimal_ways(t_all *all, t_tint *d, t_relations **z)
+int				copy_way(t_all *all, t_tint *d, int o)
 {
-	int	f1;
-	int h;
+	int			ddd;
 
-	f1= -1;
+	ddd = 0;
+	while (all->t[ddd].i > -1)
+	{
+		d[ddd].i = all->t[ddd].i;
+		ddd++;
+	}
+	d[ddd].i = -1;
+	return (o);
+}
+
+int				ft_intersection_loop(t_all *all, t_tint *d,
+					t_relations **z, int m)
+{
+	int			h;
+	int			f1;
+	int			o;
+
+	f1 = -1;
 	h = 0;
-	while(h < all->a)
+	while (h < all->a)
 	{
 		while (z[h] == NULL && all->a >= h)
 			h++;
-		if (h > all->a)
+		if (h > all->a && m == 0)
 			return (0);
+		else if (h > all->a)
+			break ;
 		inter(all, z, h);
-		int o = 0;
+		o = 0;
 		while (all->t[o].i > -1)
 			o++;
 		if (f1 < o)
-		{
-			int ddd = 0;
-			while (all->t[ddd].i > -1)
-			{
-				d[ddd].i = all->t[ddd].i;
-				ddd++;
-			} 
-			d[ddd].i = -1;
-			f1 = o;
-		}
+			f1 = copy_way(all, d, o);
+		m++;
 		h++;
 	}
+	return (1);
+}
+
+int				optimal_ways(t_all *all, t_tint *d, t_relations **z)
+{
+	int			h;
+	t_relations	*d1;
+
+	h = 0;
+	while (all->a > h)
+	{
+		d1 = z[h];
+		while (d1)
+			d1 = d1->next;
+		h++;
+	}
+	if (ft_intersection_loop(all, d, z, 0) == 0)
+		return (0);
 	if (all->a == 0)
 	{
 		d[0].i = 0;

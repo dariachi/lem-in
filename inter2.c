@@ -1,109 +1,136 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   inter2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dchirkin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/02/08 18:29:44 by dchirkin          #+#    #+#             */
+/*   Updated: 2018/02/08 18:29:46 by dchirkin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lemin.h"
 
-void	inter(t_all *all, t_relations **s, int tumba)
+void		copy_ther_row(t_all *all, t_rel *a, int tumba)
 {
-	int numb = 0;
-	int z = 0;
-	t_relations *d1, *d2, *d3, *d4;
-	d3 = malloc(sizeof(t_relations));
-	d4 = d3;
-
-	d1 = s[tumba];
-									//копируем текущий рядок
-
+	a->d3 = malloc(sizeof(t_relations));
+	a->d4 = a->d3;
 	all->m = 0;
 	all->t[all->m].i = tumba;
 	all->m++;
-	d4->rel = ft_strdup(d1->rel);
-	d4->next = NULL;
-	d1 = d1->next;
-	while(d1)
+	a->d4->rel = ft_strdup(a->d1->rel);
+	a->d4->next = NULL;
+	a->d1 = a->d1->next;
+	while (a->d1)
 	{
-		d2 = malloc(sizeof(t_relations));
-		d2->next = NULL;
-		d2->rel = ft_strdup(d1->rel);
-		while(d4->next)
-			d4 = d4->next;
-		d4->next = d2;
-		d1 = d1->next;
+		a->d2 = malloc(sizeof(t_relations));
+		a->d2->next = NULL;
+		a->d2->rel = ft_strdup(a->d1->rel);
+		while (a->d4->next)
+			a->d4 = a->d4->next;
+		a->d4->next = a->d2;
+		a->d1 = a->d1->next;
 	}
+}
 
-	int i = 0;
-	int f = 1;
-	while(i <= all->a)						//смотрит есть ли повторения
+void		add_elements(t_rel *a, int z, t_all *all)
+{
+	while (a->d1 && z != -1)
 	{
-		if(i == tumba)
-			i++;
-
-		while(s[i] == NULL && i <= all->a)
-			i++;
-		if(i > all->a)
-			break ;
-		d4 = d3;
-		d1 = s[i];
-		z = 0;
-		while(d4)
+		if (ft_strcmp(a->d1->rel, all->en) == 0 ||
+			ft_strcmp(a->d1->rel, all->st) == 0)
 		{
-			d1 = s[i];
-			while(d1)
-			{
-				if(ft_strcmp(d1->rel, all->en) == 0 || ft_strcmp(d1->rel, all->st) == 0)
-				{
-
-					d1 = d1->next;
-					continue;
-				}
-				if(ft_strcmp(d1->rel, d4->rel) ==0)
-					z = -1;
-				d1 = d1->next;
-			}
-			d4 = d4->next;
+			a->d1 = a->d1->next;
+			continue;
 		}
+		a->d2 = malloc(sizeof(t_relations));
+		a->d2->next = NULL;
+		a->d2->rel = ft_strdup(a->d1->rel);
+		while (a->d4->next)
+			a->d4 = a->d4->next;
+		a->d4->next = a->d2;
+		a->d1 = a->d1->next;
+	}
+}
 
-		d4 = d3;
-		d1 = s[i];
+int			add_elements_first(t_rel *a, t_all *all, int i, t_relations **s)
+{
+	int		z;
 
-		if(z != -1)
+	z = 0;
+	while (a->d4)
+	{
+		a->d1 = s[i];
+		while (a->d1)
+		{
+			if (ft_strcmp(a->d1->rel, all->en) == 0 ||
+				ft_strcmp(a->d1->rel, all->st) == 0)
+			{
+				a->d1 = a->d1->next;
+				continue;
+			}
+			if (ft_strcmp(a->d1->rel, a->d4->rel) == 0)
+				z = -1;
+			a->d1 = a->d1->next;
+		}
+		a->d4 = a->d4->next;
+	}
+	return (z);
+}
+
+void		next_iter_funct(t_all *all, t_rel *a, t_relations **s, int tumba)
+{
+	int		i;
+	int		z;
+
+	i = 0;
+	while (i <= all->a)
+	{
+		if (i == tumba)
+			i++;
+		while (s[i] == NULL && i <= all->a)
+			i++;
+		if (i > all->a)
+			break ;
+		a->d4 = a->d3;
+		a->d1 = s[i];
+		z = add_elements_first(a, all, i, s);
+		a->d4 = a->d3;
+		a->d1 = s[i];
+		if (z != -1)
 		{
 			all->t[all->m].i = i;
 			all->m++;
-			f++;
 		}
-		while(d1 && z != -1)
-		{
-			if(ft_strcmp(d1->rel, all->en) == 0 || ft_strcmp(d1->rel, all->st) == 0) 		//дописует эллементы в структуру
-			{
-				d1 = d1->next;
-				continue;
-			}
-			d2 = malloc(sizeof(t_relations));
-			d2->next = NULL;
-			d2->rel = ft_strdup(d1->rel);
-			while(d4->next)
-				d4 = d4->next;
-			d4->next = d2;
-			d1 = d1->next;
-		}
+		add_elements(a, z, all);
 		i++;
 	}
+}
+
+void		inter(t_all *all, t_relations **s, int tumba)
+{
+	t_rel	a;
+	t_tint	d[100];
+	int		ddd;
+
+	a.d1 = s[tumba];
+	copy_ther_row(all, &a, tumba);
+	next_iter_funct(all, &a, s, tumba);
 	all->t[all->m].i = -1;
-	t_tint d[100];
-	int ddd = 0;
-	while(all->t[ddd].i > -1)
+	ddd = 0;
+	while (all->t[ddd].i > -1)
 	{
 		d[ddd].i = all->t[ddd].i;
 		ddd++;
-	} 
+	}
 	d[ddd].i = -1;
-
-
-
-	d4 = d3;
-	while(d4)
+	a.d4 = a.d3;
+	while (a.d4)
 	{
-		d2 = d4;
-		d4 = d4->next;
-		free(d2->rel);
-		free(d2);
+		a.d2 = a.d4;
+		a.d4 = a.d4->next;
+		free(a.d2->rel);
+		free(a.d2);
 	}
 }

@@ -31,12 +31,13 @@ void			ft_distance_truck(t_all *all)
 	all->a = 0;
 }
 
-int				three_next_f(t_all *all, t_relations **z)
+int				three_next_f(t_all *all, t_relations **z, char **s)
 {
 	t_relations	*u1;
 
 	ft_distance_truck(all);
-	building_the_way(all, z);
+	if (building_the_way(all, z, s) == 2)
+		return (2);
 	u1 = z[0];
 	while (u1->next)
 		u1 = u1->next;
@@ -46,69 +47,25 @@ int				three_next_f(t_all *all, t_relations **z)
 	return (1);
 }
 
-int				next_next_main(t_all *all, char **s, char *str)
+void			free_relations(t_all *all, t_relations **z)
 {
-	t_tint		d[100];
-	t_relations	**z;
-	int			t;
-	int			mas[all->ants];
-	int         maxLines;
+	int			u;
+	t_relations *d1;
+	t_relations *d2;
 
-	maxLines = 500;
-	z = malloc(sizeof(t_relations *) * maxLines);
-	t = 0;
-	while (t < maxLines)
-		z[t++] = NULL;
-	str = s[all->i];
-	if (check_links(str, all, s) == 0 || ft_position_def(all) == 0)
-		return (0);
-	if (three_next_f(all, z) == 0 || optimal_ways(all, d, z) == 0)
-		return (0);
-	if (start_end_way(all) == 0)
-		return (1);
-	flip_and_len_ways(all, d, z);
-	t = 0;
-	while (t < all->ants)
-	{
-		mas[t] = 1;
-		t++;
-	}
-	write_str(s);
-	t_truck *tr; 
-
-	while(all->truck1)
-	{
-		tr = all->truck1;
-		all->truck1 = all->truck1->next;
-		free(tr->s);
-		free(tr->f);
-		free(tr);
-	}
-
-
-	int u = 0;
-	char *x;
-	while(s[u])
-	{
-		free(s[u]);
-		u++;
-	}
-	move_ants(all, z, d, mas);
 	u = 0;
-	t_relations *d1, *d2;
-	while(u <= all->a)
+	while (u <= all->a)
 	{
 		d1 = z[u];
-		if(d1 == NULL)
+		if (d1 == NULL)
 		{
 			u++;
-			if(u >= all->a)
+			if (u >= all->a)
 				break ;
 			continue ;
 		}
-		while(d1)
+		while (d1)
 		{
-			// printf("d1 %s\n", d1->rel);
 			d2 = d1;
 			d1 = d1->next;
 			free(d2->rel);
@@ -116,7 +73,61 @@ int				next_next_main(t_all *all, char **s, char *str)
 		}
 		u++;
 	}
-
 	free(z);
+}
+
+int				ft_next_main_m(t_all *all, t_relations **z, char **s, t_tint *d)
+{
+	int			k;
+
+	k = three_next_f(all, z, s);
+	if (k == 0)
+	{
+		free_relations(all, z);
+		return (0);
+	}
+	else if (k == 2)
+	{
+		free_relations(all, z);
+		return (1);
+	}
+	if (optimal_ways(all, d, z) == 0)
+	{
+		free_relations(all, z);
+		return (0);
+	}
+	if (start_end_way(all, s) == 0)
+	{
+		free_relations(all, z);
+		return (1);
+	}
+	return (2);
+}
+
+int				next_next_main(t_all *all, char **s, char *str)
+{
+	t_tint		d[100];
+	t_relations	**z;
+	int			t;
+	int			mas[all->ants];
+
+	z = ft_creat_relations(all);
+	str = s[all->i];
+	if (str == NULL)
+		return (ft_fre_str(z));
+	if (check_links(str, all, s) == 0 || ft_position_def(all) == 0)
+	{
+		free_relations(all, z);
+		return (0);
+	}
+	t = ft_next_main_m(all, z, s, d);
+	if (t == 0 || t == 1)
+		return (t);
+	flip_and_len_ways(all, d, z, 0);
+	value_in_one(mas, all);
+	write_str(s);
+	end_free(all, s);
+	move_ants(all, z, d, mas);
+	free_relations(all, z);
 	return (1);
 }

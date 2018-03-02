@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-int		poss(char *str, char c, int g)
+int			poss(char *str, char c, int g)
 {
 	int		i;
 
@@ -25,12 +25,12 @@ int		poss(char *str, char c, int g)
 		return (0);
 }
 
-int		kkk(char *rob, char *n, char **line)
+int			kkk(char *rob, char *n, char **line)
 {
 	int		i;
 	char	*nv;
 	int		j;
-	char *temp;
+	char	*temp;
 
 	j = 0;
 	i = poss(rob, '\n', BUFF_SIZE);
@@ -49,10 +49,9 @@ int		kkk(char *rob, char *n, char **line)
 	return (1);
 }
 
-int		w(int ret, char **line, int fd, char *rob)
+int			w(int ret, char **line, int fd, char *rob)
 {
-	char *nline;
-	char *temp;
+	char	*nline;
 
 	nline = NULL;
 	while ((rob[0] == '\0') || (ret == BUFF_SIZE))
@@ -68,23 +67,18 @@ int		w(int ret, char **line, int fd, char *rob)
 		}
 		nline = ft_strchr(rob, '\n');
 		if (nline == NULL)
-		{
-			temp = *line;
-			*line = ft_strjoin(*line, rob);
-			free(temp);
-			ft_memset(rob, '\0', BUFF_SIZE);
-		}
+			ft_free_gnl(line, rob);
 		else
 			return (kkk(rob, nline, line));
 	}
 	return (1);
 }
 
-int		sear(char *rob, int fd, char **line)
+int			sear(char *rob, int fd, char **line)
 {
 	int		ret;
 	char	*nline;
-	char *temp;
+	char	*temp;
 
 	ret = 0;
 	nline = NULL;
@@ -108,7 +102,7 @@ int		sear(char *rob, int fd, char **line)
 	}
 }
 
-int		get_next_line(const int fd, char **line)
+int			get_next_line(const int fd, char **line)
 {
 	static char		*osn;
 	int				num;
